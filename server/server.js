@@ -11,6 +11,17 @@ app.get("/server", function(req, res){
 // app.get("/", function(req, res){
 //     res.send('hello');
 // });
+function calculateTotal(subTotal, taxChecked, promoEnabled) {
+    var total;
+    total = subTotal;
+    if (taxChecked){
+        total += (subTotal * 0.13);
+    }
+    if (promoEnabled == "yes"){
+        total -= (subTotal * 0.5)
+    }
+    return total;
+}
 
 app.post("/server", function(req, res){
     var num1 = Number(req.body.item1);
@@ -21,17 +32,8 @@ app.post("/server", function(req, res){
     var subTotal,total;
 
     subTotal = (num1 *40)+ (num2*30) + (num3*50);
-    total = subTotal;
-    if (taxChecked){
-        total += (subTotal * 0.13);
-    }
-    if (promoEnabled == "yes"){
-        total -= (subTotal * 0.5)
-    }
-    // else{
-    // var total = (num1 *40)+ (num2*30);
-        
-    // }
+
+    total = calculateTotal(subTotal, taxChecked, promoEnabled);
     res.send("Thanks! Your total is $" + total);
 });
 
