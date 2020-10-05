@@ -34,6 +34,7 @@ function App() {
         </div>
       
         <br/>
+        <h3>Use code 'yes' for 50% off!</h3>
         <input className ="promo" type="text" name="promo" placeholder=" Enter promocode"></input>
         <br/>
         <h1>Press submit to see your total on the next page! </h1>
