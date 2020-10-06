@@ -22,6 +22,9 @@ function calculateTotal(subTotal, taxChecked, promoEnabled) {
     }
     return total;
 }
+module.exports = {
+    calculateTotal: calculateTotal
+  }
 
 app.post("/server", function(req, res){
     var num1 = Number(req.body.item1);
