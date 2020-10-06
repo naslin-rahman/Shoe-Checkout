@@ -2,25 +2,18 @@ import React, {useState} from 'react';
 import Item from "./Item";
 
 function App() {
-  const [text, setText] = useState("Discount not applied");
-
-  function change(){
-      setText("Discount applied")
-  }
-
+  
   return (
     <div className="App">
       <h1>Welcome to the Shoe shop!</h1>
       <form action="/server" method ="post">
         <div className="row">
 
-          <div className="col-lg-4">
-            <div className ="card">
-              <h1>Heels ($40)</h1>
-              <img alt ="" src="https://media.missguided.com/i/missguided/F1609479_01"/>
-              <input id ="item1" type="text" name="item1" placeholder=" Enter # Items"></input>
-            </div>
-          </div>
+          <Item
+            itemNum = "item1"
+            title = "Heels ($40)"
+            url ="https://media.missguided.com/i/missguided/F1609479_01"
+          />
           <Item
             itemNum = "item2"
             title = "Sneakers ($30)"
@@ -40,8 +33,6 @@ function App() {
         <h1>Press submit to see your total on the next page! </h1>
         <div>
 
-        {/* <h1>{text}</h1>
-        <p onClick={change}>Apply discount</p> */}
         <h3>Would you like to apply tax?</h3>
         <input type ="checkbox" name ="tax"></input>
         </div>
