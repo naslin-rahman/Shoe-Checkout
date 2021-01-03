@@ -1,6 +1,3 @@
-# assignment-1-64-naslin-rahman-1234567980-web
-assignment-1-64-naslin-rahman-1234567980 created by GitHub Classroom
-
 # Web App
 A simple web application for a shoe checkout system. It is created using React JS for front end, Bootstrap for responsive design and Node Js for our backend. 
 
